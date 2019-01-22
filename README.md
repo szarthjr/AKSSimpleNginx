@@ -33,7 +33,7 @@
   kubectl get nodes
   ```
 
-* Acessar o endereço (neste caso):
+* Acessar o endereço (neste caso já fucnional):
 
   ```bash
   40.118.127.81
