@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: w2q2-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: w2q2-api
+  template:
+    metadata:
+      labels:
+        app: w2q2-api
+    spec:
+      containers:
+      - name: w2q2-api
+        image: sergiozarth/way2_questao_2_nginx
+        ports:
+        - containerPort: 80
+          name: nginx
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: w2q2-api
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80  
+  selector:
+    app: w2q2-api
